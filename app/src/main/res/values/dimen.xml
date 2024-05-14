@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name = "itemWidth">100dp</dimen> <!--defini a largura como 100dp-->
+    <dimen name = "itemHeight">100dp</dimen> <!--defini a altura como 100dp-->
+</resources>

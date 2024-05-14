@@ -1,8 +1,10 @@
-package isabel.vitoria.galeria;
+package values.galeria;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import isabel.vitoria.galeria.R;
 
 public class MainActivity extends AppCompatActivity {
 
