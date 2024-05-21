@@ -20,6 +20,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="isabel.vitoria.activity.MainActivity"/>
         </activity>
+        <provider
+            android:authorities="isabel.vitoria.galeria.fileprovider"
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths">
+            </meta-data>
+        </provider>
         <activity
             android:name="isabel.vitoria.activity.MainActivity"
             android:exported="true">
