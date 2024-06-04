@@ -10,6 +10,7 @@ import androidx.core.content.FileProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -63,6 +64,11 @@ public class MainActivity extends AppCompatActivity {
             photos.add(files[i].getAbsolutePath());
         }
 
+        List<String> permissions = new ArrayList<>();
+        permissions.add(Manifest.permission.CAMERA);
+
+        checkForPermissions(permissions);
+
         //cria o MainAdapter e seta o RecycleView
         mainAdapter = new MainAdapter(MainActivity.this, photos);
         RecyclerView rvGallery = findViewById(R.id.rvGallery);
@@ -89,13 +95,11 @@ public class MainActivity extends AppCompatActivity {
     // código que dispara a câmera do celular
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.opCamera:
-                dispatchTakePictureIntent();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        if (item.getItemId() == R.id.opCamera) {
+            dispatchTakePictureIntent();
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 
     private void dispatchTakePictureIntent() {
