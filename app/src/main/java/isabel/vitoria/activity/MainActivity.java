@@ -31,6 +31,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import isabel.vitoria.adapter.MainAdapter;
@@ -114,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
         currentPhotoPath = f.getAbsolutePath();
 
         if (f != null) {
-            Uri fUri = FileProvider.getUriForFile(MainActivity.this, "trindade.daniel.galeria.fileprovider", f);
+            Uri fUri = FileProvider.getUriForFile(MainActivity.this, "isabel.vitoria.galeria.fileprovider", f);
             Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             i.putExtra(MediaStore.EXTRA_OUTPUT, fUri);
             startActivityForResult(i, RESULT_TAKE_PICTURE);
